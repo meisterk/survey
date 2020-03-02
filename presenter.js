@@ -1,5 +1,6 @@
+import { View } from "./view.js";
 export class Presenter {
   constructor() {
-    console.log("Test");
+    this.view = new View(this);
   }
 }
