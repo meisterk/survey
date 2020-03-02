@@ -9,9 +9,12 @@ export class View {
   }
 
   renderStartView() {
+    // HTML
     const html = `<p>So it works: bla bla bla ...</p>
     <button id='buttonStart'>Start</button>`;
     this.app.innerHTML = html;
+
+    // Eventhandler
     const buttonStart = document.getElementById("buttonStart");
     buttonStart.addEventListener("click", () => {
       this.presenter.buttonClicked(0);
@@ -19,6 +22,7 @@ export class View {
   }
 
   renderQuestionView() {
+    // HTML
     this.clearView();
     this.pNode = document.createElement("p");
     this.app.appendChild(this.pNode);
@@ -32,6 +36,7 @@ export class View {
     `;
     this.divNode.innerHTML = html;
 
+    // Eventhandler
     const button1 = document.getElementById("button1");
     button1.addEventListener("click", () => {
       this.presenter.buttonClicked(1);
