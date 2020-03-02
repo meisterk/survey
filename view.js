@@ -51,6 +51,19 @@ export class View {
     });
   }
 
+  renderEvaluation() {
+    // HTML
+    const html = `<p>Evaluation: bla bla bla ...</p>
+    <button id='buttonStart'>Once more</button>`;
+    this.app.innerHTML = html;
+
+    // Eventhandler
+    const buttonStart = document.getElementById("buttonStart");
+    buttonStart.addEventListener("click", () => {
+      this.presenter.buttonClicked(0);
+    });
+  }
+
   displayQuestion(text) {
     this.pNode.innerHTML = text;
   }
