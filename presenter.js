@@ -4,8 +4,8 @@ import { questions } from "./questions.js";
 export class Presenter {
   constructor() {
     this.view = new View(this);
-    this.view.renderStartView();
     this.questionNumber = 0;
+    this.view.renderStartView();
   }
 
   buttonClicked(buttonNumber) {
