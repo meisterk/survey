@@ -21,11 +21,13 @@ export class View {
     });
   }
 
-  renderQuestionView() {
+  renderQuestionView(questionText) {
     // HTML
     this.clearView();
     this.pNode = document.createElement("p");
+    this.pNode.innerText = questionText;
     this.app.appendChild(this.pNode);
+
     this.divNode = document.createElement("div");
     this.app.appendChild(this.divNode);
     const html = `<ul>
@@ -62,9 +64,5 @@ export class View {
     buttonStart.addEventListener("click", () => {
       this.presenter.buttonClicked(0);
     });
-  }
-
-  displayQuestion(text) {
-    this.pNode.innerHTML = text;
   }
 }

@@ -13,16 +13,15 @@ export class Presenter {
       // Show first question
       this.questionNumber = 0;
       const question = questions[this.questionNumber].text;
-      this.view.renderQuestionView();
-      this.view.displayQuestion(question);
+      this.view.renderQuestionView(question);
     } else if (this.questionNumber >= questions.length - 1) {
+      // Show evaluation
       this.view.renderEvaluation();
     } else {
       // Show next question
       this.questionNumber++;
       const question = questions[this.questionNumber].text;
-      this.view.renderQuestionView();
-      this.view.displayQuestion(question);
+      this.view.renderQuestionView(question);
     }
   }
 }
