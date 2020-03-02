@@ -4,20 +4,41 @@ export class View {
     this.app = document.getElementById("app");
   }
 
+  renderStartView() {
+    const html = `<p>So it works: bla bla bla ...</p>
+    <button id='buttonStart'>Start</button>`;
+    this.app.innerHTML = html;
+    const buttonStart = document.getElementById("buttonStart");
+    buttonStart.addEventListener("click", () => {
+      this.presenter.buttonClicked(0);
+    });
+  }
+
   renderQuestionView() {
     this.pNode = document.createElement("p");
     this.app.appendChild(this.pNode);
     this.divNode = document.createElement("div");
     this.app.appendChild(this.divNode);
     const html = `<ul>
-    <li><button>One</button></li>
-    <li><button>Two</button></li>
-    <li><button>Three</button></li>
-    <li><button>Four</button></li>
-    <li><button>Five</button></li>
+    <li><button id='button1'>One</button></li>
+    <li><button id='button2'>Two</button></li>
+    <li><button id='button3'>Three</button></li>
     </ul>
     `;
     this.divNode.innerHTML = html;
+
+    const button1 = document.getElementById("button1");
+    button1.addEventListener("click", () => {
+      this.presenter.buttonClicked(1);
+    });
+    const button2 = document.getElementById("button2");
+    button2.addEventListener("click", () => {
+      this.presenter.buttonClicked(2);
+    });
+    const button3 = document.getElementById("button3");
+    button3.addEventListener("click", () => {
+      this.presenter.buttonClicked(3);
+    });
   }
 
   displayQuestion(text) {
