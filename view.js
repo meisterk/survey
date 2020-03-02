@@ -4,6 +4,10 @@ export class View {
     this.app = document.getElementById("app");
   }
 
+  clearView() {
+    this.app.innerHTML = "";
+  }
+
   renderStartView() {
     const html = `<p>So it works: bla bla bla ...</p>
     <button id='buttonStart'>Start</button>`;
@@ -15,6 +19,7 @@ export class View {
   }
 
   renderQuestionView() {
+    this.clearView();
     this.pNode = document.createElement("p");
     this.app.appendChild(this.pNode);
     this.divNode = document.createElement("div");
