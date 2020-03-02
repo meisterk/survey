@@ -1,27 +1,30 @@
-import { View } from "./view.js";
-import { questions } from "./questions.js";
+import { View } from './view.js';
+import { questions } from './questions.js';
 
 export class Presenter {
   constructor() {
     this.view = new View(this);
+    // Start
     this.questionNumber = 0;
-    this.view.renderStartView();
+    this.view.renderStartView('Here is how it works: blah blah');
+  }
+
+  buttonStartClicked() {
+    // Show first question
+    this.questionNumber = 0;
+    const question = questions[this.questionNumber].text;
+    this.view.renderQuestionView(question);
   }
 
   buttonClicked(buttonNumber) {
-    if (buttonNumber === 0) {
-      // Show first question
-      this.questionNumber = 0;
-      const question = questions[this.questionNumber].text;
-      this.view.renderQuestionView(question);
-    } else if (this.questionNumber >= questions.length - 1) {
-      // Show evaluation
-      this.view.renderEvaluation();
-    } else {
+    if (this.questionNumber < questions.length - 1) {
       // Show next question
       this.questionNumber++;
       const question = questions[this.questionNumber].text;
       this.view.renderQuestionView(question);
+    } else {
+      // Show evaluation
+      this.view.renderEvaluation('Evaluation: blah blah');
     }
   }
 }
