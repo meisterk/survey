@@ -5,7 +5,6 @@ export class Presenter {
   constructor() {
     this.view = new View(this);
     // Start
-    this.questionNumber = 0;
     this.view.renderStartView('Here is how it works: blah blah');
   }
 
