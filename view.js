@@ -1,10 +1,10 @@
 export class View {
   constructor(presenter) {
     this.presenter = presenter;
+    this.app = document.getElementById("app");
   }
 
   renderQuestionView() {
-    this.app = document.getElementById("app");
     this.pNode = document.createElement("p");
     this.app.appendChild(this.pNode);
     this.divNode = document.createElement("div");
